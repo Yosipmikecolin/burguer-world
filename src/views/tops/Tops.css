@@ -191,6 +191,18 @@ span {
   font-size: 20px;
 }
 
+@media (max-width: 1450px) {
+  .card > .description > p,
+  span {
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .card {
+    height: auto;
+  }
+}
+
 .controls-slider {
   width: 100%;
   display: flex;
@@ -429,7 +441,7 @@ span {
   }
 
   .card {
-    width: 250px;
+    width: 200px;
     height: 250px;
   }
   .card > img {
@@ -437,4 +449,3 @@ span {
     left: -30px;
   }
 }
-

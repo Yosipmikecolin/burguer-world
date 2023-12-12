@@ -106,6 +106,7 @@ const Tops = ({ isOpenCart }: Props) => {
                   <h2>$ {item.price}</h2>
                   <div className="description">
                     <p>{item.title}</p>
+                    <br />
                     <span
                       style={{
                         color: "orange",
