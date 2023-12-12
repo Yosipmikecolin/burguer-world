@@ -1,0 +1,440 @@
+.container-tops {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 93vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.baner-black {
+  background-color: #282828;
+  width: 400px;
+  height: 65%;
+  position: absolute;
+  top: 0;
+  left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0px 0px 10px 10px;
+  z-index: 200;
+}
+
+.baner-black > img {
+  position: relative;
+  left: 10px;
+}
+
+.title-portada {
+  position: absolute;
+  color: white;
+  font-weight: 500;
+  font-size: 40px;
+  z-index: 200;
+  top: 3%;
+}
+
+.container-tops .content {
+  width: 900px;
+  position: relative;
+  bottom: 200px;
+  position: relative;
+  left: 100px;
+}
+
+.container-tops .content > h1 {
+  font-size: 60px;
+  font-weight: bold;
+}
+
+.container-tops .content > p {
+  font-size: 30px;
+}
+.container-tops .content .orden {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.orden > span {
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+}
+.orden > button {
+  background-color: #282828;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: 500ms ease;
+}
+
+.orden > button:hover {
+  background-color: #474747;
+}
+
+.cards-tops {
+  padding: 20px;
+  position: absolute;
+  bottom: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+  text-transform: uppercase;
+}
+
+.cards-tops-mobil {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  top: 650px;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 30px;
+  padding: 20px;
+  text-transform: uppercase;
+}
+
+.card {
+  background-color: #382e2d;
+  color: white;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  position: relative;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  text-transform: uppercase;
+}
+
+.image-modal {
+  background-color: #382e2d;
+  text-align: center;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.title-modal {
+  font-weight: bold;
+  color: #382e2d;
+}
+
+.description-modal {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #382e2d;
+}
+
+.spiner-card {
+  border: 5px solid #f3f3f3;
+  border-top: 5px solid orange;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.icon-cart {
+  position: absolute;
+  bottom: 0px;
+  right: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.icon-eyes {
+  position: absolute;
+  bottom: 0px;
+  left: 10px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.card > img {
+  position: absolute;
+  top: -60px;
+  right: 130px;
+}
+
+.card > h2 {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  font-weight: bold;
+}
+
+.card > .description > p,
+span {
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.controls-slider {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: absolute;
+  bottom: -20px;
+  height: 10px;
+}
+
+.item-slider {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: red;
+  cursor: pointer;
+  transition: 500ms ease;
+}
+
+.item-slider-disabled {
+  width: 15px;
+  height: 15px;
+  border-radius: 100%;
+  background-color: rgba(255, 0, 0, 0.479);
+  cursor: pointer;
+  transition: 500ms ease;
+}
+
+.content-mobil {
+  margin-top: 600px;
+  text-align: center;
+  display: none;
+  padding: 10px;
+}
+
+.content-mobil > h1 {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.content-mobil > p {
+  font-size: 20px;
+}
+.content-mobil .orden {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.content-mobil .orden > span {
+  color: red;
+}
+
+@media (max-height: 1152px) {
+  .cards-tops {
+    bottom: 0;
+    margin-bottom: 50px;
+  }
+
+  .card {
+    width: 200px;
+    height: 200px;
+  }
+
+  .card > img {
+    width: 100px;
+    top: -30px;
+  }
+}
+
+@media (max-height: 967px) {
+  .title-portada {
+    font-size: 30px;
+  }
+}
+
+@media (max-height: 867px) {
+  .title-portada {
+    font-size: 25px;
+    top: 1%;
+  }
+}
+
+@media (max-height: 927px) {
+  .title-portada {
+    display: none;
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 2082px) {
+  .container-tops .content {
+    left: 200px;
+  }
+}
+
+@media (max-width: 1796px) {
+  .container-tops .content {
+    left: 300px;
+  }
+}
+
+@media (max-width: 1536px) {
+  .container-tops .content {
+    left: 250px;
+    width: 700px;
+  }
+}
+
+@media (max-width: 1404px) {
+  .container-tops .content {
+    left: 300px;
+    width: 700px;
+  }
+}
+
+@media (max-width: 1315px) {
+  .container-tops .content {
+    left: 250px;
+    width: 500px;
+  }
+
+  .container-tops .content > h1 {
+    font-size: 40px;
+  }
+
+  .container-tops .content > p {
+    font-size: 20px;
+  }
+
+  .baner-black {
+    width: 300px;
+  }
+
+  .baner-black > img {
+    width: 500px;
+  }
+
+  .title-portada {
+    font-size: 30px;
+  }
+}
+@media (max-width: 1197px) {
+  .cards-tops {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 1157px) {
+  .container-tops .content {
+    left: 200px;
+    width: 500px;
+  }
+}
+
+@media (max-width: 1043px) {
+  .container-tops .content {
+    left: 240px;
+  }
+}
+
+@media (max-width: 1027px) {
+  .cards-tops {
+    display: none;
+  }
+  .cards-tops-mobil {
+    display: flex;
+  }
+}
+
+@media (max-width: 949px) {
+  .container-tops .content {
+    display: none;
+  }
+
+  .content-mobil {
+    display: block;
+  }
+
+  .baner-black {
+    left: 0;
+    right: 0;
+    margin: auto;
+  }
+
+  .cards-tops-mobil {
+    margin-top: 300px;
+  }
+
+  .controls-slider {
+    height: 25px;
+  }
+}
+
+@media (max-width: 603px) {
+  .content-mobil > h1 {
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .content-mobil > p {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 477px) {
+  .baner-black {
+    width: 150px;
+    height: 30%;
+  }
+
+  .baner-black > img {
+    width: 250px;
+    margin-right: 20px;
+  }
+
+  .title-portada {
+    font-size: 14px;
+  }
+
+  .content-mobil {
+    margin-top: 0px;
+  }
+  .content-mobil > .orden {
+    flex-wrap: wrap;
+  }
+
+  .cards-tops-mobil {
+    margin-top: 0px;
+  }
+
+  .card > img {
+    width: 80px;
+  }
+
+  .card {
+    width: 250px;
+    height: 250px;
+  }
+  .card > img {
+    width: 130px;
+    left: -30px;
+  }
+}
+

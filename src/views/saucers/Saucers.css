@@ -1,0 +1,87 @@
+.container-saucers {
+  z-index: 900;
+}
+
+.baner-saucers {
+  background-color: #282828;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  
+}
+
+.baner-saucers > h1 {
+  font-weight: 500;
+  font-size: 80px;
+  color: white;
+}
+
+.baner-saucers > h3 {
+  font-weight: 500;
+  font-size: 40px;
+  color: orange;
+}
+
+@media (max-width: 1653px) {
+  .baner-saucers > h1 {
+    font-size: 50px;
+  }
+}
+
+@media (max-width: 1054px) {
+  .baner-saucers > h1 {
+    font-size: 40px;
+  }
+
+  .baner-saucers > h3 {
+    font-size: 30px;
+  }
+}
+
+@media (max-width: 866px) {
+  .baner-saucers > h1 {
+    font-size: 30px;
+  }
+
+  .baner-saucers > h3 {
+    font-size: 20px;
+  }
+
+  .baner-saucers {
+    height: 200px;
+  }
+}
+
+.container-cards{
+    display: flex;
+    gap: 70px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 30px;
+    margin-top: 50px;
+
+}
+
+@media (max-width: 532px) {
+  .baner-saucers > h1 {
+    font-size: 20px;
+  }
+
+  .baner-saucers > h3 {
+    font-size: 18px;
+  }
+
+  .baner-saucers {
+    height: 150px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 425px) {
+  .baner-saucers > h3 {
+    font-size: 16px;
+  }
+}
