@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { useListProduct } from "../../hooks/products-burguers";
 import { Button, Modal } from "@mantine/core";
 import { useDisclosure } from "@mantine/hooks";
+import toast, { Toaster } from "react-hot-toast";
 
 interface Props {
   setOpenCart: React.Dispatch<React.SetStateAction<boolean>>;
@@ -15,8 +16,13 @@ const Header = ({ setOpenCart }: Props) => {
   const [openMenuMobil, setOpenMenuMobil] = useState(false);
   const { pathname } = useLocation();
   const [opened, { open, close }] = useDisclosure(false);
-  const { products, setListProduct, setremoveUnitProduct, removeAllProducts,removeProduct } =
-    useListProduct();
+  const {
+    products,
+    setListProduct,
+    setremoveUnitProduct,
+    removeAllProducts,
+    removeProduct,
+  } = useListProduct();
   const [loading, setLoading] = useState(false);
 
   const handleResize = () => {
@@ -76,6 +82,9 @@ const Header = ({ setOpenCart }: Props) => {
       setLoading(false);
       close();
       removeAllProducts();
+      toast(
+        "Muchas gracias por tu compra, tu pedido se despachará dentro de 40 minutos."
+      );
     }, 1500);
 
     return () => clearTimeout(time);
@@ -83,6 +92,15 @@ const Header = ({ setOpenCart }: Props) => {
 
   return (
     <nav>
+      <Toaster
+        toastOptions={{
+          duration: 4000,
+          style: {
+            background: "orange",
+            color: "#fff",
+          },
+        }}
+      />
       <ul>
         <li>
           <Link to="/" style={{ color: pathname === "/" ? "red" : "black" }}>
@@ -190,7 +208,10 @@ const Header = ({ setOpenCart }: Props) => {
           {products.length ? (
             products.map((item) => (
               <div className="item-cart" key={item.id}>
-                <div className="close-cart" onClick={() => removeProduct(item.id)}>
+                <div
+                  className="close-cart"
+                  onClick={() => removeProduct(item.id)}
+                >
                   X
                 </div>
                 <div

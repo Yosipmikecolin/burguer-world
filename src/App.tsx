@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import Tops from "./views/tops/Tops";
 import Saucers from "./views/saucers/Saucers";
-import We from "./views/ingredients/we";
+import We from "./views/we/we";
 import Header from "./components/header/Header";
 import { useState } from "react";
 

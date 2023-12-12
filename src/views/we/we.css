@@ -4,6 +4,9 @@
   flex-direction: column;
   width: 60%;
   margin: auto;
+  height: 93vh;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .history {
