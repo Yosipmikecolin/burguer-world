@@ -63,11 +63,9 @@ const Tops = ({ isOpenCart }: Props) => {
     <section className="container-tops">
       <div className="baner-black">
         <div className="title-portada">
-          <h2 className="animate__animated animate__fadeInDown">BurgerWorld</h2>
+          <h2>BurgerWorld</h2>
         </div>
-        <div className="animate__animated animate__bounceIn">
-          <img src={MenuPortada} />
-        </div>
+        <img src={MenuPortada} />
       </div>
 
       <section className="content">
