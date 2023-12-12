@@ -9,6 +9,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { useProduct } from "../../hooks/details-product";
 import { Product } from "../../interface/products";
 import { useListProduct } from "../../hooks/products-burguers";
+import IconCheck from "../../assets/icon-check.png";
 
 interface Props {
   isOpenCart: boolean;
@@ -20,7 +21,7 @@ const Tops = ({ isOpenCart }: Props) => {
   const [loadImage, setLoadImage] = useState<{ [key: string]: boolean }>({});
   const [opened, { open, close }] = useDisclosure(false);
   const { product, setProduct } = useProduct();
-  const { setListProduct } = useListProduct();
+  const { products, setListProduct } = useListProduct();
   const [classAnimate, setClassAnimate] = useState(
     "animate__animated animate__fadeIn"
   );
@@ -120,9 +121,16 @@ const Tops = ({ isOpenCart }: Props) => {
 
                     <div
                       className="icon-cart"
-                      onClick={() => setListProduct(item)}
+                      onClick={() =>
+                        !products.some((i) => i.id === item.id) &&
+                        setListProduct(item)
+                      }
                     >
-                      <CgShoppingCart />
+                      {products.some((i) => i.id === item.id) ? (
+                        <img src={IconCheck} width={30} />
+                      ) : (
+                        <CgShoppingCart />
+                      )}
                     </div>
                   </div>
                 </>
@@ -187,9 +195,16 @@ const Tops = ({ isOpenCart }: Props) => {
 
                     <div
                       className="icon-cart"
-                      onClick={() => setListProduct(item)}
+                      onClick={() =>
+                        !products.some((i) => i.id === item.id) &&
+                        setListProduct(item)
+                      }
                     >
-                      <CgShoppingCart />
+                      {products.some((i) => i.id === item.id) ? (
+                        <img src={IconCheck} width={30} />
+                      ) : (
+                        <CgShoppingCart />
+                      )}
                     </div>
                   </div>
                 </>
@@ -252,11 +267,14 @@ const Tops = ({ isOpenCart }: Props) => {
         </ul>
 
         <Button
+          disabled={products.some((i) => i.id === product?.id)}
           color="#ffa500"
           style={{ marginTop: 30 }}
           onClick={() => product && setListProduct(product)}
         >
-          Agregar al carrito
+          {products.some((i) => i.id === product?.id)
+            ? "Producto agregado al carrito"
+            : "Agregar al carrito"}
         </Button>
       </Modal>
     </section>
